@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}
+The 90's Kids
+{% endblock %}
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/index.css' %}">
+{% endblock %}
+{% block content %}
+<main>
+    <section class="container-main">
+    <div class="article-detail">
+        <img class="header-image" src="{{ article.image.url }}">
+        <h1>
+            {{ article.title }}
+        </h1>
+        <p class="caption">by {{ article.author }} at {{ article.date }}</p>
+        <h2>{{ article.snippet }}</h2>
+        <p> {{ article.text|safe }} </p>
+    </div>
+    </section>
+</main>
+{% endblock %}
